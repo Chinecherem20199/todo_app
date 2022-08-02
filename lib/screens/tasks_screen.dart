@@ -1,14 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/screens/add_task_screen.dart';
 import 'package:todo_app/widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
-  Widget buildButtomSheet(BuildContext context) {
-    return Container(
-      child: Text('Welcome to ButtomSheetContainer'),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +11,16 @@ class TasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () {
-          showModalBottomSheet(builder: buildButtomSheet, context: context);
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => AddTasksScreen(),
+            //     Container(
+            //   child: Center(
+            //     child: Text('Welcome to ButtomSheetContainer'),
+            //   ),
+            // ),
+          );
+          // showModalBottomSheet(builder: buildButtomSheet, context: context);
         },
         child: Icon(
           Icons.add,
