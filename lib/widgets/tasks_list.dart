@@ -5,16 +5,20 @@ import 'tasks_tile.dart';
 class TasksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-        TaskTile(),
-      ],
+    return Container(
+      child: ListView(
+        shrinkWrap: true,
+        // shrinkWrap: true,
+        children: [
+          TaskTile(),
+          TaskTile(),
+          TaskTile(),
+          TaskTile(),
+          TaskTile(),
+          TaskTile(),
+          TaskTile(),
+        ],
+      ),
     );
   }
 }
