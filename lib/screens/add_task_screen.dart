@@ -34,7 +34,9 @@ class AddTasksScreen extends StatelessWidget {
               height: 15.0,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                //Add task here
+              },
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(Colors.deepPurple),
                 backgroundColor:
