@@ -1,7 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/model/task_data.dart';
 
-class AddTasksScreen extends StatelessWidget {
+class AddTasksScreen extends StatefulWidget {
+  @override
+  State<AddTasksScreen> createState() => _AddTasksScreenState();
+}
+
+class _AddTasksScreenState extends State<AddTasksScreen> {
+//   @override
+  String newTaskTitle = '';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,13 +39,19 @@ class AddTasksScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              onChanged: (newText) {
+                newTaskTitle = newText;
+                // Provider.of<TaskData>(context, listen: false).addTask(newText);
+              },
             ),
             SizedBox(
               height: 15.0,
             ),
             TextButton(
               onPressed: () {
-                //Add task here
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle);
+                Navigator.pop(context);
               },
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(Colors.deepPurple),
